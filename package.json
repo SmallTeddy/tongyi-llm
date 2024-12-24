@@ -1,0 +1,16 @@
+{
+  "name": "qwen-cli-chat",
+  "version": "1.0.0",
+  "description": "命令行通义千问工具",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "chat": "node index.js"
+  },
+  "dependencies": {
+    "openai": "^4.28.0",
+    "dotenv": "^16.4.1",
+    "inquirer": "^9.2.12",
+    "chalk": "^5.3.0"
+  }
+} 
