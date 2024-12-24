@@ -35,7 +35,7 @@ function formatMarkdownLine(text) {
     const level = text.match(/^#+/)[0].length;
     const title = text.slice(level).trim();
     const prefix = '#'.repeat(level);
-    return '\n' + chalk.bold.hex('#4B9EF9')(`${prefix} ${title}`);
+    return '\n\n' + chalk.bold.hex('#4B9EF9')(`${prefix} ${title}`);
   }
   
   // 处理引用块
