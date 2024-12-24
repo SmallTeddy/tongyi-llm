@@ -13,7 +13,6 @@ const openai = new OpenAI({
 
 function formatMarkdownLine(text) {
   let isInCodeBlock = false;
-  let codeBlockContent = '';
   
   // 检查是否在代码块内
   if (text.includes('```')) {
@@ -28,8 +27,7 @@ function formatMarkdownLine(text) {
 
   // 处理行内代码
   text = text.replace(/`([^`]+)`/g, (_, code) => {
-    const codeMarker = chalk.bold('｜');
-    return ` ${codeMarker} ${chalk.white(code)} `;
+    return ` ${chalk.white(code)} `;
   });
   
   // 处理标题 (支持多级标题)
@@ -37,7 +35,7 @@ function formatMarkdownLine(text) {
     const level = text.match(/^#+/)[0].length;
     const title = text.slice(level).trim();
     const prefix = '#'.repeat(level);
-    return chalk.bold.hex('#4B9EF9')(`${prefix} ${title}`);
+    return '\n' + chalk.bold.hex('#4B9EF9')(`${prefix} ${title}`);
   }
   
   // 处理引用块
